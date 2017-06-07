@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h3>Team Lead: <%= @employee.name %></h3>
+<h3>Team Lead: <%= title_case(@employee.name) %></h3>
 
 <table>
   <thead>
@@ -13,7 +13,7 @@
   <tbody>
     <% @employee.subordinates.each do |team_mem| %>
       <tr>
-        <td><%= team_mem.name %></td>
+        <td><%= title_case(team_mem.name) %></td>
         <td><%= team_mem.skills.count %></td>
       </tr>
     <% end %>
