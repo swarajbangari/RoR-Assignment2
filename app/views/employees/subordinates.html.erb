@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Team Lead: <%= @employee.name %></h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Skills</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employee.subordinates.each do |team_mem| %>
+      <tr>
+        <td><%= team_mem.name %></td>
+        <td><%= team_mem.skills.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Back', employees_path %>
